@@ -3,31 +3,52 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --primary-color: #00925d;
+  --bg-color: #000000;
+  --bg-black: #28262d;
+  --main-text-color: #fff;
+  --secondary-text-color: #f9f9f9;
+  --para-color: #9ca4ab;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+.splide__pagination {
+  @apply justify-end md:bottom-[3.5rem] md:pe-[5rem];
+}
+
+.splide__arrow--prev {
+  @apply !-left-12;
+}
+
+.splide__arrow--next {
+  @apply !-right-12;
+}
+
+@layer base {
+  html {
+    @apply scroll-smooth;
   }
-}
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
+  body {
+    @apply text-sm bg-[var(--bg-color)] text-[var(--main-text-color)];
+  }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  ul {
+    @apply list-none;
+  }
+
+  p {
+    @apply text-accent;
+  }
+  section {
+    @apply flex py-10 flex-col gap-6;
+  }
+  .active {
+    @apply font-bold;
+  }
+  .overlay {
+    @apply relative after:content-[''] after:absolute after:w-full after:h-full after:left-0 after:top-0 after:bg-gradient-to-b after:from-black after:via-transparent after:to-black before:content-[''] before:absolute before:w-full before:h-full before:left-0 before:top-0 before:bg-gradient-to-r before:from-black before:via-black before:to-transparent before:opacity-70;
+  }
+  .card-overlay {
+    @apply relative after:content-[''] after:absolute after:w-full after:h-full after:left-0 after:top-0 after:bg-gradient-to-t after:from-black after:via-transparent after:to-transparent;
   }
 }

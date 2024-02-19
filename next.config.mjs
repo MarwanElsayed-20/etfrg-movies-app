@@ -1,4 +1,15 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: "http",
+        hostname: "image.tmdb.org",
+        port: "",
+        pathname: "/t/p/**",
+      },
+    ],
+  },
+};
 
 export default nextConfig;
