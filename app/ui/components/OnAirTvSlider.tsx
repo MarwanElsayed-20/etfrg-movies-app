@@ -1,6 +1,5 @@
 "use client";
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
+
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
 import mediaPlaceHolder from "@/public/mediaplaceholder.png";
