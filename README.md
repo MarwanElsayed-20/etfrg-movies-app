@@ -29,7 +29,15 @@ npm install
 npm run dev
 ```
 
-The app reads its data from the TMDB API.
+Create `.env.local` with a TMDB read access token (from
+[themoviedb.org/settings/api](https://www.themoviedb.org/settings/api)):
+
+```
+TMDB_TOKEN=your-read-access-token
+```
+
+The token stays on the server: server components call TMDB directly, and the one client component
+that loads data (the TV seasons tab) goes through the app's own `/api/tmdb` route.
 
 ## Structure
 
